@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "776682053762",
+    "project_id": "hauserdemo-3b8e5",
+    "storage_bucket": "hauserdemo-3b8e5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:776682053762:android:32c5391052c41ff4ba149b",
+        "android_client_info": {
+          "package_name": "com.example.faculty_profile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "776682053762-39vmm2ks1hiqdm55qt5s6750n2e10jbv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbDktnHoPfNlm11Emsg_Yahj_ysVNIlu0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "776682053762-39vmm2ks1hiqdm55qt5s6750n2e10jbv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
