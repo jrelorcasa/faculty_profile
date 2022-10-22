@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:faculty_profile/data/services/services.dart';
 import 'package:faculty_profile/styles.dart';
 import 'package:faculty_profile/widgets/custom_divider.dart';
 import 'package:faculty_profile/widgets/profile_avatar.dart';
@@ -31,42 +33,63 @@ class _FacultyProfileScreenState extends State<FacultyProfileScreen> {
         ),
         const SizedBox(height: 30),
         const CustomDivider(),
-        Expanded(
-          child: Container(
-            alignment: Alignment.center,
-            padding: const EdgeInsets.symmetric(horizontal: 30),
-            child: Wrap(
-              spacing: 20,
-              runSpacing: 20,
-              children: [
-                ProfileAvatar(
-                  name: 'Abegail Robinson',
-                  image: 'https://i.pravatar.cc/150?img=16',
-                  onTap: () {},
+        StreamBuilder<QuerySnapshot<Map<String, dynamic>>>(
+            stream: FirestoreService.fetchProfessors(),
+            builder: (context, snapshot) {
+              if (!snapshot.hasData) {
+                return const CircularProgressIndicator();
+              }
+
+              if (snapshot.hasError) {
+                return ErrorWidget(Exception());
+              }
+
+              return Expanded(
+                child: Container(
+                  alignment: Alignment.center,
+                  padding: const EdgeInsets.symmetric(horizontal: 30),
+                  child: Wrap(
+                    spacing: 20,
+                    runSpacing: 20,
+                    children: [
+                      ProfileAvatar(
+                        name: 'Abegail Robinson',
+                        image: 'https://i.pravatar.cc/150?img=16',
+                        onTap: () {},
+                      ),
+                      ProfileAvatar(
+                        onTap: () {},
+                      ),
+                      ProfileAvatar(
+                        onTap: () {},
+                      ),
+                      ProfileAvatar(
+                        onTap: () {},
+                      ),
+                      ProfileAvatar(
+                        name: 'Allison James',
+                        image: 'https://i.pravatar.cc/150?img=32',
+                        onTap: () {},
+                      ),
+                      ProfileAvatar(
+                        onTap: () {},
+                      ),
+                    ],
+                  ),
                 ),
-                ProfileAvatar(
-                  onTap: () {},
-                ),
-                ProfileAvatar(
-                  onTap: () {},
-                ),
-                ProfileAvatar(
-                  onTap: () {},
-                ),
-                ProfileAvatar(
-                  name: 'Allison James',
-                  image: 'https://i.pravatar.cc/150?img=32',
-                  onTap: () {},
-                ),
-                ProfileAvatar(
-                  onTap: () {},
-                ),
-              ],
-            ),
-          ),
-        ),
+              );
+            }),
         const SizedBox(height: 80),
       ],
     );
+  }
+}
+
+class FacultyListContainer extends StatelessWidget {
+  const FacultyListContainer({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container();
   }
 }

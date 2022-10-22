@@ -19,6 +19,18 @@ class AppTextStyle {
 }
 
 class AppColors {
-  static const Color maroon = Color(0xFF840E17);
+  static const Map<int, Color> maroonColor = {
+    50: Color.fromRGBO(132, 14, 23, .1),
+    100: Color.fromRGBO(132, 14, 23, .2),
+    200: Color.fromRGBO(132, 14, 23, .3),
+    300: Color.fromRGBO(132, 14, 23, .4),
+    400: Color.fromRGBO(132, 14, 23, .5),
+    500: Color.fromRGBO(132, 14, 23, .6),
+    600: Color.fromRGBO(132, 14, 23, .7),
+    700: Color.fromRGBO(132, 14, 23, .8),
+    800: Color.fromRGBO(132, 14, 23, .9),
+    900: Color.fromRGBO(132, 14, 23, 1),
+  };
+  static const MaterialColor maroon = MaterialColor(0xFF840E17, maroonColor);
   static const Color maroonLight = Color(0xFFe2cbcd);
 }
